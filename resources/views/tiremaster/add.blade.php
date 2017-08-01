@@ -28,8 +28,38 @@
 			{{ csrf_field() }}
 				<div class="col-md-6">
 					<div class="form-group">
-						<label for="nama">Nama</label>
-						{{ Form::text('name', null, ['class'=>'form-control','required'=>'required','id'=>'name','placeholder'=>'Nama']) }}
+						<label for="nama">Kode</label>
+						{{ Form::text('code', null, ['class'=>'form-control','required'=>'required','id'=>'code','placeholder'=>'Kode']) }}
+					</div>
+					<div class="form-group">
+						<label for="nama">Tipe</label>
+						{{ Form::select('type_id', $tiretype,null,['class'=>'form-control']) }}
+					</div>
+					<div class="form-group">
+						<label for="nama">Part Number</label>
+						{{ Form::text('partnumber', null, ['class'=>'form-control','required'=>'required','id'=>'partnumber','placeholder'=>'Part Number']) }}
+					</div>
+					<div class="form-group">
+						<label for="nama">Ukuran</label>
+						{{ Form::select('size_id', $tiresize,null,['class'=>'form-control']) }}
+					</div>
+					<div class="form-group">
+						<label for="nama">Brand</label>
+						{{ Form::text('brand', null, ['class'=>'form-control','required'=>'required','id'=>'brand','placeholder'=>'Nama']) }}
+					</div>
+				</div>
+				<div class="col-md-6">	
+					<div class="form-group">
+						<label for="nama">Std KM</label>
+						{{ Form::number('km', 0, ['class'=>'form-control','required'=>'required','id'=>'km','placeholder'=>'Std KM']) }}
+					</div>
+					<div class="form-group">
+						<label for="nama">Std Harga</label>
+						{{ Form::number('price', 0, ['class'=>'form-control','required'=>'required','id'=>'price','placeholder'=>'Std Harga']) }}
+					</div>
+					<div class="form-group">
+						<label for="nama">Std Supplier</label>
+						{{ Form::text('supplier', null, ['class'=>'form-control','required'=>'required','id'=>'supplier','placeholder'=>'Std Supplier']) }}
 					</div>
 				
 					<button type="submit" class="btn btn-primary">

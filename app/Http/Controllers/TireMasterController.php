@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
 use App\tiremaster;
+use App\tiresize;
+use App\tiretype;
 
 /**
  * Class HomeController
@@ -42,30 +44,41 @@ class TireMasterController extends Controller
 
     public function create()
     {
-        return view('tiremaster.add');
+        $tiresize = tiresize::lists('name', 'id');
+        $tiretype = tiretype::lists('name', 'id');
+        return view('tiremaster.add',['tiretype'=>$tiretype,'tiresize'=>$tiresize]);
     }
 
     public function store(Request $request)
     {
         $this->validate($request, [
-                            'name'=>'required'
+                            'code'=>'required'
                     ]);
 
         $input = input::all();
 
         $tiremaster = new tiremaster;
-        $tiremaster->name = $input['name'];
+        $tiremaster->code = $input['code'];
+        $tiremaster->type_id = $input['type_id'];
+        $tiremaster->partnumber = $input['partnumber'];
+        $tiremaster->size_id = $input['size_id'];
+        $tiremaster->brand_id = $input['brand'];
+        $tiremaster->km = $input['km'];
+        $tiremaster->price = $input['price'];
+        $tiremaster->supplier = $input['supplier'];
 
         $tiremaster->save();
 
         $request->session()->flash('alert-success','Data berhasil disimpan!');
-        return redirect()->action('tiremasterController@index');
+        return redirect()->action('TireMasterController@index');
     }
 
     public function edit($id)
     {
         $tiremaster = tiremaster::where('id',$id)->first();
-        return view('tiremaster.edit',compact('tiremaster'));
+        $tiresize = tiresize::lists('name', 'id');
+        $tiretype = tiretype::lists('name', 'id');
+        return view('tiremaster.edit',['tiremaster'=>$tiremaster,'tiretype'=>$tiretype,'tiresize'=>$tiresize]);
     }
 
     public function update(Request $request, $id)

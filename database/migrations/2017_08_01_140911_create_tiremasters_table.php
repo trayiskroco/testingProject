@@ -14,11 +14,14 @@ class CreateTiremastersTable extends Migration
     {
         Schema::create('tiremasters', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('kode')->unique();
+            $table->string('code')->unique();
             $table->integer('type_id');
             $table->integer('size_id');
-            $table->string('brand');
+            $table->integer('brand_id');
             $table->double('km');
+            $table->double('price');
+            $table->string('partnumber');
+            $table->integer('supplier');
             $table->timestamps();
         });
     }

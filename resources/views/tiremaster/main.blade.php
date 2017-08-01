@@ -5,7 +5,7 @@
 @endsection
 
 @section('contentheader_title')
-    Tipe Ban
+    Master Ban
 @endsection
 
 @section('main-content')
@@ -22,7 +22,7 @@
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h2 class="panel-title">Daftar Tipe Ban</h2>
+				<h2 class="panel-title">Daftar Ban</h2>
 			</div>
 			<div class="panel-body">
 				<a href="{{ url('tiremaster/create') }}" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Tambah Data</a>
@@ -30,16 +30,26 @@
 				<table class="table table-bordered">
 					<thead>
 						<tr>
-							<td>No</td>
-							<td>Nama</td>
+							<td>Kode</td>
+							<td>Tipe</td>
+							<td>Part Number</td>
+							<td>Ukuran</td>
+							<td>Brand</td>
+							<td>KM</td>
+							<td>Std Harga</td>
 							<td>Proses</td>
 						</tr>
 					</thead>
 					<tbody>
 						@foreach ($tiremaster as $tiremaster)
 						<tr>
-							<td>{{ $tiremaster->id }}</td>
-							<td>{{ $tiremaster->name }}</td>
+							<td>{{ $tiremaster->code }}</td>
+							<td>{{ $tiremaster->type_id }}</td>
+							<td>{{ $tiremaster->partnumber }}</td>
+							<td>{{ $tiremaster->size_id }}</td>
+							<td>{{ $tiremaster->brand }}</td>
+							<td>{{ $tiremaster->km }}</td>
+							<td>{{ $tiremaster->price }}</td>
 							<td>
 								{!! Form::open(array('url'=>url('tiremaster/'.$tiremaster->id))) !!}
 									{{ method_field('DELETE') }}
