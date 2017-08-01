@@ -23,3 +23,6 @@ Route::get('/',[
 Route::get('dashboard',function(){
 	return view('dashboard');
 });
+
+Route::resource('/tiretype','TireTypeController');
+Route::get('tiretype','TireTypeController@index');

@@ -36,7 +36,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{!! url('dashboard') !!}"><i class="fa fa-toggle-right"></i> Tipe Ban</a></li>
+            <li><a href="{!! url('tiretype') !!}"><i class="fa fa-toggle-right"></i> Tipe Ban</a></li>
             <li><a href="#"><i class="fa fa-toggle-right"></i> Ukuran Ban</a></li>
             <li><a href="#"><i class="fa fa-toggle-right"></i> Master Ban</a></li>
             <li><a href="#"><i class="fa fa-toggle-right"></i> Perawatan Ban</a></li>

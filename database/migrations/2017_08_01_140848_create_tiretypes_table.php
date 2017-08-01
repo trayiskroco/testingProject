@@ -14,6 +14,7 @@ class CreateTiretypesTable extends Migration
     {
         Schema::create('tiretypes', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nama');
             $table->timestamps();
         });
     }
