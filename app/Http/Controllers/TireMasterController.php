@@ -11,13 +11,13 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
-use App\tiretype;
+use App\tiremaster;
 
 /**
  * Class HomeController
  * @package App\Http\Controllers
  */
-class TireTypeController extends Controller
+class TireMasterController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -36,13 +36,13 @@ class TireTypeController extends Controller
      */
     public function index()
     {
-        $tiretype = tiretype::all();
-        return view('tiretype.main',compact('tiretype'));
+        $tiremaster = tiremaster::all();
+        return view('tiremaster.main',compact('tiremaster'));
     }
 
     public function create()
     {
-        return view('tiretype.add');
+        return view('tiremaster.add');
     }
 
     public function store(Request $request)
@@ -53,19 +53,19 @@ class TireTypeController extends Controller
 
         $input = input::all();
 
-        $tiretype = new tiretype;
-        $tiretype->name = $input['name'];
+        $tiremaster = new tiremaster;
+        $tiremaster->name = $input['name'];
 
-        $tiretype->save();
+        $tiremaster->save();
 
         $request->session()->flash('alert-success','Data berhasil disimpan!');
-        return redirect()->action('TireTypeController@index');
+        return redirect()->action('tiremasterController@index');
     }
 
     public function edit($id)
     {
-        $tiretype = tiretype::where('id',$id)->first();
-        return view('tiretype.edit',compact('tiretype'));
+        $tiremaster = tiremaster::where('id',$id)->first();
+        return view('tiremaster.edit',compact('tiremaster'));
     }
 
     public function update(Request $request, $id)
@@ -75,24 +75,24 @@ class TireTypeController extends Controller
                     ]);
 
         $input = $request->all();
-        tiretype::find($id)->update($input);
+        tiremaster::find($id)->update($input);
 
         $request->session()->flash('alert-success','Data berhasil diubah!');
-        return redirect()->action('TireTypeController@index');
+        return redirect()->action('tiremasterController@index');
     }
 
     public function destroy(Request $request, $id)
     {
-        $tiretype = tiretype::find($id);
-        $tiretype->delete();
+        $tiremaster = tiremaster::find($id);
+        $tiremaster->delete();
 
         $request->session()->flash('alert-success','Data berhasil dihapus!');
-        return redirect()->action('TireTypeController@index');
+        return redirect()->action('tiremasterController@index');
     }
 
     public function show($id)
     {
-        $tiretype = tiretype::where('id',$id)->first();
-        return view('tiretype.show',compact('tiretype'));
+        $tiremaster = tiremaster::where('id',$id)->first();
+        return view('tiremaster.show',compact('tiremaster'));
     }
 }

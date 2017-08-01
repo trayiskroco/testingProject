@@ -5,7 +5,7 @@
 @endsection
 
 @section('contentheader_title')
-    Tipe Ban
+    Ukuran Ban
 @endsection
 
 @section('main-content')
@@ -22,10 +22,10 @@
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h2 class="panel-title">Daftar Tipe Ban</h2>
+				<h2 class="panel-title">Daftar Ukuran Ban</h2>
 			</div>
 			<div class="panel-body">
-				<a href="{{ url('tiretype/create') }}" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Tambah Data</a>
+				<a href="{{ url('tiresize/create') }}" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Tambah Data</a>
 
 				<table class="table table-bordered">
 					<thead>
@@ -36,15 +36,15 @@
 						</tr>
 					</thead>
 					<tbody>
-						@foreach ($tiretype as $tiretype)
+						@foreach ($tiresize as $tiresize)
 						<tr>
-							<td>{{ $tiretype->id }}</td>
-							<td>{{ $tiretype->name }}</td>
+							<td>{{ $tiresize->id }}</td>
+							<td>{{ $tiresize->name }}</td>
 							<td>
-								{!! Form::open(array('url'=>url('tiretype/'.$tiretype->id))) !!}
+								{!! Form::open(array('url'=>url('tiresize/'.$tiresize->id))) !!}
 									{{ method_field('DELETE') }}
 									{{ csrf_field() }}
-									<a href="{{url('tiretype/'.$tiretype->id.'/edit')}}" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Ubah</a>
+									<a href="{{url('tiresize/'.$tiresize->id.'/edit')}}" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Ubah</a>
 									<button class="btn btn-danger" onClick="var x = confirm('Hapus ?');if(x){return true;}else{return false;}">
 										<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Hapus</button>
 								{!! Form::close() !!}

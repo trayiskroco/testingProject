@@ -14,7 +14,7 @@ class CreateTiresizesTable extends Migration
     {
         Schema::create('tiresizes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama');
+            $table->string('name');
             $table->timestamps();
         });
     }

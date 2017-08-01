@@ -26,3 +26,9 @@ Route::get('dashboard',function(){
 
 Route::resource('/tiretype','TireTypeController');
 Route::get('tiretype','TireTypeController@index');
+
+Route::resource('/tiresize','TireSizeController');
+Route::get('tiresize','TireSizeController@index');
+
+Route::resource('/tiremaster','TireMasterController');
+Route::get('tiremaster','TireMasterController@index');
