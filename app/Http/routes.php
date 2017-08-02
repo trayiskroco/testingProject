@@ -32,3 +32,6 @@ Route::get('tiresize','TireSizeController@index');
 
 Route::resource('/tiremaster','TireMasterController');
 Route::get('tiremaster','TireMasterController@index');
+
+Route::resource('/partunit','MspartunitController');
+Route::get('partunit','MspartunitController@index');

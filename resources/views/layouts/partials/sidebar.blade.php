@@ -42,6 +42,20 @@
             <li><a href="#"><i class="fa fa-toggle-right"></i> Perawatan Ban</a></li>
           </ul>
         </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-car"></i> <span>Modul Part Jaenudin</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{!! url('partunit') !!}"><i class="fa fa-toggle-right"></i> Part Unit</a></li>
+            <li><a href="{!! url('tiresize') !!}"><i class="fa fa-toggle-right"></i> Ukuran Ban</a></li>
+            <li><a href="{!! url('tiremaster') !!}"><i class="fa fa-toggle-right"></i> Master Ban</a></li>
+            <li><a href="#"><i class="fa fa-toggle-right"></i> Perawatan Ban</a></li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
